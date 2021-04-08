@@ -14,3 +14,4 @@ phases:
 artifacts:
   files:
     - target/lambda-events-testing-1.0-SNAPSHOT.jar
+    - outputSamlTemplate.yaml
