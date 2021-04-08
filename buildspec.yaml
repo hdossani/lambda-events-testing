@@ -1,10 +1,16 @@
 version: 0.1
 phases:
   install:
+    runtime-versions:
+      java: corretto8
+  pre_build:
     commands:
-    - aws cloudformation package --template-file template.yaml --s3-bucket osdemo.k8s.valaxy.net --output-template-file outputSamlTemplate.yaml
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo Build started on `date`
+      - mvn install
+      - aws cloudformation package --template-file template.yaml --s3-bucket osdemo.k8s.valaxy.net --output-template-file outputSamlTemplate.yaml
 artifacts:
-  type: zip
   files:
-    - template.yaml
-    - outputSamlTemplate.yaml
+    - target/lambda-events-testing-1.0-SNAPAHOT.jar

@@ -20,9 +20,9 @@ Resources:
       DeploymentPreference:
         Type: AllAtOnce
       Policies:
-        - AWSLambdaBasicExecutionRole
-        - AWSLambda_ReadOnlyAccess
+        - AmazonS3FullAccess
         - AWSXrayWriteOnlyAccess
+        - AWSLambda_FullAccess
       Tags: {
               "Project": "AWS Java2 Lambda CI/CD",
               "Owner": "HD"
