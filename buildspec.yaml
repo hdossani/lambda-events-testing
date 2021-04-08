@@ -13,4 +13,4 @@ phases:
       - aws cloudformation package --template-file template.yaml --s3-bucket osdemo.k8s.valaxy.net --output-template-file outputSamlTemplate.yaml
 artifacts:
   files:
-    - target/lambda-events-testing-1.0-SNAPAHOT.jar
+    - target/lambda-events-testing-1.0-SNAPSHOT.jar
