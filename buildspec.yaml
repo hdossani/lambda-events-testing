@@ -10,8 +10,12 @@ phases:
     commands:
       - echo Build started on `date`
       - mvn install
+      - mv target/lambda-events-testing-1.0-SNAPSHOT.jar .
+      - unzip lambda-events-testing-1.0-SNAPSHOT.jar
+      - rm -rf AUTHORS META-INF/ src/ events/ target/  Class50/ LICENSE README.md VersionInfo.java changelog.txt codegen-resources/ io/ latestchanges.html lombok/ mime.types mozilla/ org/ release-timestamp.txt secondaryLoading.SCL.lombok/ software/ lambda-events-testing-1.0-SNAPSHOT.jar
       - aws cloudformation package --template-file template.yaml --s3-bucket osdemo.k8s.valaxy.net --output-template-file outputSamlTemplate.yaml
 artifacts:
   files:
     - target/lambda-events-testing-1.0-SNAPSHOT.jar
+    - template.yaml
     - outputSamlTemplate.yaml
