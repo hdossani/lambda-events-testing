@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: ing Java2 Lambda Function From Scratch Using SAM
+Description: Java2 Lambda Function From Scratch Using SAM With CICD
 
 Globals:
   Function:
@@ -13,7 +13,7 @@ Resources:
     Properties:
       FunctionName: Java2LambdaFunction
       Handler: com.lambda.basics.Handler::handleRequest
-      MemorySize: 512
+      MemorySize: 128
       CodeUri: ./
       AutoPublishAlias: live
       Tracing: Active
