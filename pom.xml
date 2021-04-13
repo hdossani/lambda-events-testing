@@ -128,13 +128,31 @@
           </goals>
 
           <configuration>
-            <outputDirectory>${basedir}</outputDirectory>
+            <outputDirectory>${basedir}/</outputDirectory>
             <resources>
               <resource>
                 <directory>${basedir}/target/classes/</directory>
                 <filtering>false</filtering>
               </resource>
             </resources>
+
+          </configuration>
+
+        </execution>
+      </executions>
+    </plugin>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-dependency-plugin</artifactId>
+      <executions>
+        <execution>
+          <id>copy-dependencies</id>
+          <phase>package</phase>
+          <goals>
+            <goal>copy-dependencies</goal>
+          </goals>
+          <configuration>
+            <outputDirectory>${basedir}/lib</outputDirectory>
           </configuration>
         </execution>
       </executions>
