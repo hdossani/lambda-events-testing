@@ -15,7 +15,7 @@ public class Handler implements RequestHandler<Map<String, String>, String> {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         // process event
         logger.log("EVENT: " + gson.toJson(event));
-        logger.log("EVENT TYPE: " + event.getClass().toString());
+        logger.log("Name From Event : " + event.get("name"));
         return gson.toJson(event);
     }
 }
